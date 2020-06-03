@@ -93,9 +93,8 @@ embed = hub.Module(module_url)
 
 # %%
 def UniversalEmbedding(x):
-    return embed(tf.squeeze(tf.cast(x, tf.string)),
+    return embed(tf.squeeze(tf.cast(x, tf.string), axis=1),
                  signature="default", as_dict=True)["default"]
-
 
 # %%
 embed_size = 512
